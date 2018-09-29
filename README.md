@@ -1,4 +1,4 @@
-# ConceptRecognition_word2vec 
+# Combining lexical and context features for automatic ontology extension
 * We generate the word vectors for our large corpus (~ 58G) using IBEX Cluster.  
 * Using **generateMAP.groovy** to identify Infectious and Anatomical disease classes and their corresponding subclasses.  
 * With **Disease.py** we use the whole generated vectors to train SVM and ANN to classifiy wheather a term refer to a disease class or non-disease term.  
