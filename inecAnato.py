@@ -12,7 +12,6 @@ from sklearn.metrics import roc_curve, auc, confusion_matrix
 from sklearn import preprocessing
 from sklearn.model_selection import KFold
 from sklearn import metrics
-# from ggplot import *
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.model_selection import StratifiedShuffleSplit
 from scipy import interp
@@ -147,36 +146,6 @@ X_train, X_test, y_train, y_test = train_test_split(data, targetdata, test_size=
 plt.figure()
 plt.plot([0, 1], [0, 1], 'k--')
 
-# mlp = OneVsRestClassifier(MLPClassifier(hidden_layer_sizes=200, activation='logistic', alpha=0.1, shuffle=True, solver="lbfgs"))
-# fold = 10
-# skf = StratifiedShuffleSplit(n_splits=fold)
-# f1 = 0.0
-# for train_index, test_index in skf.split(data, targetdata):
-#     X_train, X_test, y_train, y_test = data[train_index, :], data[test_index, :], targetdata[train_index], targetdata[test_index]
-#     clf = mlp
-#     clf.fit(X_train, y_train)
-#     predicted = clf.predict(X_test)
-#     predicted1 = clf.predict(X_train)
-#     pro = clf.predict_proba(X_test)
-#     pro1 = clf.predict_proba(X_train)
-#     # pro = clf.predict_log_proba(X_test)
-#     np.savetxt('testscoreBOTH.tsv', pro, delimiter="\t")
-#     np.savetxt('trainscoreBOTH.tsv', pro1, delimiter="\t")
-#     temp = disvec[test_index,0]
-#     temp1 = disvec[train_index, 0]
-#     predictiontemp = pd.DataFrame(temp, columns=['doid'])
-#     predictiontemp1 = pd.DataFrame(temp1, columns=['doid'])
-#     predictiontemp.to_csv('testdoidBOTH.tsv', sep='\t')
-#     predictiontemp1.to_csv('traindoidBOTH.tsv', sep='\t')
-#     f1 += f1_score(y_test, predicted, average='micro')
-#
-# # Calculate AUC
-# fpr, tpr, _ = metrics.roc_curve(y_test.ravel(), predicted.ravel())
-# aus_score = metrics.roc_auc_score(y_test, predicted, average='macro')
-# print(aus_score)
-# # plt.plot(fpr,tpr,label='ROC curve for Linear SVM (area = %0.4f)' % aus_score)
-# print(f1 / fold)
-
 mlp = OneVsRestClassifier(MLPClassifier(hidden_layer_sizes=10, activation='logistic', alpha=0.1, shuffle=True, solver="lbfgs"))
 fold = 10
 skf = StratifiedShuffleSplit(n_splits=fold)
@@ -196,8 +165,8 @@ fpr, tpr, thresholds = metrics.roc_curve(y_test.ravel(), predict_probabilities.r
 aus_score = metrics.roc_auc_score(y_test, predicted, average='macro')
 print(aus_score)
 plt.plot(fpr,tpr,label='ROC curve for 10 neurons ANN (area = %0.4f)' % aus_score)
-# print(f1 / fold)
-#
+print(f1 / fold)
+
 mlp = OneVsRestClassifier(MLPClassifier(hidden_layer_sizes=50, activation='logistic', alpha=0.1, shuffle=True, solver="lbfgs"))
 fold = 10
 skf = StratifiedShuffleSplit(n_splits=fold)
@@ -215,7 +184,7 @@ fpr, tpr, _ = metrics.roc_curve(y_test.ravel(), predict_probabilities.ravel())
 aus_score = metrics.roc_auc_score(y_test, predicted, average='macro')
 print(aus_score)
 plt.plot(fpr,tpr,label='ROC curve for 50 neurons ANN (area = %0.4f)' % aus_score)
-# print(f1 / fold)
+print(f1 / fold)
 
 mlp = OneVsRestClassifier(MLPClassifier(hidden_layer_sizes=100, activation='logistic', alpha=0.1, shuffle=True, solver="lbfgs"))
 fold = 10
@@ -234,7 +203,7 @@ fpr, tpr, _ = metrics.roc_curve(y_test.ravel(), predict_probabilities.ravel())
 aus_score = metrics.roc_auc_score(y_test, predicted, average='macro')
 print(aus_score)
 plt.plot(fpr,tpr,label='ROC curve for 100 neurons ANN (area = %0.4f)' % aus_score)
-# print(f1 / fold)
+print(f1 / fold)
 
 mlp = OneVsRestClassifier(MLPClassifier(hidden_layer_sizes=200, activation='logistic', alpha=0.1, shuffle=True, solver="lbfgs"))
 fold = 10
@@ -253,7 +222,7 @@ fpr, tpr, _ = metrics.roc_curve(y_test.ravel(), predict_probabilities.ravel())
 aus_score = metrics.roc_auc_score(y_test, predicted, average='micro')
 print(aus_score)
 plt.plot(fpr,tpr,label='ROC curve for 200 neurons ANN (area = %0.4f)' % aus_score)
-# print(f1 / fold)
+print(f1 / fold)
 
 plt.xlabel("False positive rate")
 plt.ylabel("True positive rate")
