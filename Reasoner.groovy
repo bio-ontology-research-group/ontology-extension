@@ -1,3 +1,6 @@
+//--------------------------------------------------------
+// this is a modified vesion of the code by @smalghamdi
+//--------------------------------------------------------
 @Grapes([
 	  @Grab(group='org.slf4j', module='slf4j-simple', version='1.6.1'),
           @Grab(group='org.semanticweb.elk', module='elk-owlapi', version='0.4.3'),
@@ -59,26 +62,13 @@ OWLClass subind14 = fac.getOWLClass(IRI.create("http://purl.obolibrary.org/obo/D
 OWLClass subind15 = fac.getOWLClass(IRI.create("http://purl.obolibrary.org/obo/DOID_0060118"))
 OWLClass subind16 = fac.getOWLClass(IRI.create("http://purl.obolibrary.org/obo/DOID_18"))
 
-
-
 OWLReasoner doReasoner = f.createReasoner(doid,config)
 List<InferredAxiomGenerator<? extends OWLAxiom>> generator = new ArrayList<InferredAxiomGenerator<? extends OWLAxiom>>();
 generator.add(new InferredSubClassAxiomGenerator());
 generator.add(new InferredEquivalentClassAxiomGenerator());
 InferredOntologyGenerator iog = new InferredOntologyGenerator(maReasoner, generator);
 iog.fillOntology(fac, doid);
-/*
-def printSubclasses(cl,fac,doReasoner){
-	if(cl != fac.getOWLNothing()){
-		doReasoner.getSubClasses(cl, false).each{
-			print(it)
-			printSubclasses(it,fac,doReasoner)
-		}
-	}
-}
 
-printSubclasses(ind,fac,doReasoner)
-*/
 String fmt = "Test%02d.txt";
 count = 0
 def fsub1 = new File(String.format(fmt, 1));
@@ -102,201 +92,51 @@ def fsub15 = new File(String.format(fmt, 15));
 def fsub16 = new File(String.format(fmt, 16));
 
 doReasoner.getSubClasses(subind1, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
-        fsub1.append(it+"\n");
-//	count = count + 1;        
+        fsub1.append(it+"\n");      
 }
 
 doReasoner.getSubClasses(subind2, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
-        fsub2.append(it+"\n");
-//      count = count + 1;        
+        fsub2.append(it+"\n");       
 }
 doReasoner.getSubClasses(subind3, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
-        fsub3.append(it+"\n");
-//      count = count + 1;        
+        fsub3.append(it+"\n");  
 }
 doReasoner.getSubClasses(subind4, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub4.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind5, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub5.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind6, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub6.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind7, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
-        fsub7.append(it+"\n");
-//      count = count + 1;        
+        fsub7.append(it+"\n");  
 }
 doReasoner.getSubClasses(subind8, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub8.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind9, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub9.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind10, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub10.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind11, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub11.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind12, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub12.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind13, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub13.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind14, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub14.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind15, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub15.append(it+"\n");
-//      count = count + 1;        
 }
 doReasoner.getSubClasses(subind16, false).each{
-       // def fsub = new File(String.format(fmt, count));
-
-        //fsub.append(it+"\n");
-        //for(sub in it){
-
-        //def fsub = new File(String.format(fmt, count));
-        //def file1 = new File('groovy1.txt')
-        //fsub << it+"\n";
         fsub16.append(it+"\n");
-//      count = count + 1;        
 }
-//def fsub = new File(String.format(fmt, count));
-//def file1 = new File('groovy1.txt')
-//fsub << it+"\n";
-
-//print(it)
-
