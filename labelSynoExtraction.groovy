@@ -1,3 +1,6 @@
+//--------------------------------------------------------
+// this is a modified vesion of the code by @smalghamdi
+//--------------------------------------------------------
 @Grapes([
 @Grab(group='org.slf4j', module='slf4j-simple', version='1.6.1'),
 @Grab(group='org.semanticweb.elk', module='elk-owlapi', version='0.4.3'),
