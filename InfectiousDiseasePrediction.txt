@@ -1,0 +1,46 @@
+//--------------------------------------------------------
+// Predicted diseases terms as infectious disease
+// 1 --> bacterial infectious disease
+// 2 --> fungal infectious disease
+// 3 --> parasitic infectious disease
+// 4 --> viral infectious disease
+//--------------------------------------------------------
+Disease ID	OriginalClass	PredictedClass
+DOID_3210	0	4
+DOID_8632	0	4
+DOID_2051	0	1
+DOID_2734	0	1
+DOID_1869	0	4
+DOID_11914	0	4
+DOID_0050130	0	1
+DOID_0090061	0	4
+DOID_0060312	0	2
+DOID_14683	0	4
+DOID_11155	0	1
+DOID_12894	0	4
+DOID_14111	0	2
+DOID_9808	0	4
+DOID_10073	0	1
+DOID_0050140	0	4
+DOID_0060591	0	1
+DOID_4131	0	2
+DOID_3530	0	3
+DOID_8596	0	1
+DOID_0050138	0	4
+DOID_713	0	4
+DOID_648	0	4
+DOID_0050147	0	2
+DOID_0050523	0	4
+DOID_10361	0	3
+DOID_0050635	0	4
+DOID_5577	0	1
+DOID_2732	0	4
+DOID_8445	0	3
+DOID_4976	0	3
+DOID_13891	0	4
+DOID_2615	0	4
+DOID_784	0	4
+DOID_9588	0	4
+DOID_1382	0	2
+DOID_10973	0	1
+DOID_11608	0	1
