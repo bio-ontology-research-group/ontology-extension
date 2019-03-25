@@ -11,7 +11,7 @@ To install python dependencies run: `pip install -r requirements.txt`
 
 ## Scripts
 
-* For removing Stopwords and Punctuations from yours corpus/article file using `cleanText.py` with extending the list of stopwords and sunctuations been removed as our needing (the comprehensive list written inside the code).
+* For removing Stopwords and Punctuations from yours corpus/article file using `cleanText.py` with extended list of stopwords and punctuations that been removed as our needing (the comprehensive list written inside the code).
 * Using `Reasoner.groovy` to identify Infectious and Anatomical disease classes and their corresponding subclasses. 
 * Using `labelSynoExtraction.groovy` to extract ontology synonyms/labels.
 * With `Diseases.py` we use the whole generated vectors to train ANN with different hidden layer sizes to classifiy wheather a term refer to a disease class or non-disease term.  
@@ -20,13 +20,15 @@ To install python dependencies run: `pip install -r requirements.txt`
 
 ## Workflow
 
-**STEP1.** Annotate Full-text PMC articles by employing [Whatizit](https://github.com/bio-ontology-research-group/whatizit) with disease names.
+**STEP1.** Clean the Full-text PMC articles by running `cleanText.py`.
 
-**STEP2.** Generate the word embeddings for the annotated text using word2vec.
+**STEP2.** Annotate Full-text PMC articles by employing [Whatizit](https://github.com/bio-ontology-research-group/whatizit) with disease names.
 
-**STEP3.** Run `Diseases.py` script with specifiying the file name containing the resulted embeddings from STEP2 (***CleanAllVectors.txt*** in our case) + ***DiseasVectors.txt*** in order to predict wheather a word is a disease of other.
+**STEP3.** Generate the word embeddings for the annotated text using word2vec.
 
-**STEP4.** Run `inecAnato.py` script with specifiying the file name containing the embeddings ***2resINF.txt*** or ***2resANA.txt*** or ***2resboth.txt*** in order to predict a new sub-classes within infectious disease, anatomical disease or both of them.
+**STEP4.** Run `Diseases.py` script with specifiying the file name containing the resulted embeddings from STEP2 (***CleanAllVectors.txt*** in our case) + ***DiseasVectors.txt*** in order to predict wheather a word is a disease of other.
+
+**STEP5.** Run `inecAnato.py` script with specifiying the file name containing the embeddings ***2resINF.txt*** or ***2resANA.txt*** or ***2resboth.txt*** in order to predict a new sub-classes within infectious disease, anatomical disease or both of them.
 
 ## Final notes
 For any comments or help needed with how to run the scripts, please send an email to: sara.althubaiti@kaust.edu.sa
