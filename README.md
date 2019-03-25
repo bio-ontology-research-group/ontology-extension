@@ -11,6 +11,7 @@ To install python dependencies run: `pip install -r requirements.txt`
 
 ## Scripts
 
+* For removing Stopwords and Punctuations from yours corpus/article file using `cleanText.py` with extending the list of stopwords and sunctuations been removed as our needing (the comprehensive list written inside the code).
 * Using `Reasoner.groovy` to identify Infectious and Anatomical disease classes and their corresponding subclasses. 
 * Using `labelSynoExtraction.groovy` to extract ontology synonyms/labels.
 * With `Diseases.py` we use the whole generated vectors to train ANN with different hidden layer sizes to classifiy wheather a term refer to a disease class or non-disease term.  
